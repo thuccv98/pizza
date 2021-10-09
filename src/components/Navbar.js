@@ -44,12 +44,12 @@ const Bars = styled(FaPizzaSlice)`
   transform: translate(-50%, -15%);
 `;
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavLink to="/">Pizza</NavLink>
-        <NavIcon>
+        <NavIcon onClick={toggle}>
           <p>menu</p>
           <Bars />
         </NavIcon>

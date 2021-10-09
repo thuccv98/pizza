@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import ImgBg from '../images/pizza-3.jpg';
 import Navbar from './Navbar.js';
+import Sidebar from './Sidebar';
 
 const HeroContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
@@ -65,9 +67,16 @@ export const HeroBtn = styled.button`
 `;
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <HeroContainer>
-      <Navbar />
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroContent>
         <HeroItems>
           <HeroH1>Greatest Pizza Ever</HeroH1>
