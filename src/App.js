@@ -3,6 +3,8 @@ import { GlobalStyle } from './globalStyle';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import { productData } from './data/productData';
+import Feature from './components/Feature';
+import { productDataTwo } from './data/productDataTwo';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <GlobalStyle />
       <Hero />
       <Products heading="Chose your favorite" data={productData} />
+      <Feature />
+      <Products heading="Sweet Treats for You" data={productDataTwo} />
     </Router>
   );
 }
